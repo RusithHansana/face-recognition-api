@@ -26,8 +26,8 @@ const app = express();
 const saltRounds = 10;
 
 //MIDDLEWARE
-app.use(bodyParser.json());
 app.use(cors());
+app.use(bodyParser.json());
 
 //API-ENDPOINTS
 app.get('/', (req,res) => {
