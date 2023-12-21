@@ -31,7 +31,7 @@ app.use(cors());
 
 //API-ENDPOINTS
 app.get('/', (req,res) => {
-    res.json(data.users);
+    res.json('Server is running');
 });
 
 app.post('/signin', (req, res) => { handleSignIn(
