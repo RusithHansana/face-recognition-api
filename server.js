@@ -34,7 +34,8 @@ app.get('/', (req,res) => {
     res.json('Server is running');
 });
 
-app.post('/signin', (req, res) => { handleSignIn(
+app.options('/signin', cors());
+app.post('/signin', cors(), (req, res) => { handleSignIn(
         req,
         res,
         knex,
@@ -42,7 +43,8 @@ app.post('/signin', (req, res) => { handleSignIn(
     )
 });
 
-app.post('/register', (req, res) => { handleRegister(
+app.options('/register', cors());
+app.post('/register', cors(), (req, res) => { handleRegister(
         req,
         res,
         knex,
