@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const bcrypt = require('bcrypt'); //is a hashing package for secure storage of passwords
-const cors = require('cors'); //to allow communication between frontend and backend
+const bcrypt = require('bcrypt'); //is a hashing package for secure storage of passwords //to allow communication between frontend and backend
+const cors = require('cors');
 
 const { handleRegister } = require('./controllers/register');
 const { handleSignIn } = require('./controllers/signin');
