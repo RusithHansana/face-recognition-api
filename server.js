@@ -25,16 +25,15 @@ const app = express();
 const saltRounds = 10;
 
 //MIDDLEWARE
-app.use(cors());
 app.use(bodyParser.json());
+app.use(cors());
 
 //API-ENDPOINTS
 app.get('/', (req,res) => {
     res.json('Server is running');
 });
 
-app.options('/signin', cors());
-app.post('/signin', cors(), (req, res) => { handleSignIn(
+app.post('/signin',(req, res) => { handleSignIn(
         req,
         res,
         knex,
@@ -42,8 +41,7 @@ app.post('/signin', cors(), (req, res) => { handleSignIn(
     )
 });
 
-app.options('/register', cors());
-app.post('/register', cors(), (req, res) => { handleRegister(
+app.post('/register', (req, res) => { handleRegister(
         req,
         res,
         knex,
