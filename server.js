@@ -13,7 +13,9 @@ const knex = require('knex')({
     client: 'pg',
     connection: {
       connectionString : process.env.DATABASE_URL,
-      ssl: true,
+      ssl: {
+        rejectUnauthorized: false
+      }
     }
 });
 
@@ -39,7 +41,7 @@ app.post('/signin',(req, res) => { handleSignIn(
     )
 });
 
-app.post('/register', (req, res) => { handleRegister(
+app.post('/register',(req, res) => { handleRegister(
         req,
         res,
         knex,
