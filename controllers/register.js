@@ -38,7 +38,7 @@ const handleRegister = (req, res, knex, bcrypt, saltRounds) => {
         .then(trx.commit)
         .catch(trx.rollback);
     })
-    .catch(res.status(500).json('Server Error'));   
+    .catch(err => res.status(500).json(err));   
     
 }
 
