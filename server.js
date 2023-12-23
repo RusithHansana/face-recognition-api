@@ -12,11 +12,8 @@ const { updateEntries, fetchAPIData } = require('./controllers/image');
 const knex = require('knex')({
     client: 'pg',
     connection: {
-      host : 'ec2-44-206-204-65.compute-1.amazonaws.com',
-      port : 5432,
-      user : 'uatxbwqsgraqrn',
-      password : '868ad3fded3176d55c0f4894e3905beb4c88db9084e2826bd17fe5216c42fc3f',
-      database : 'smart_brain'
+      host : process.env.DATABASE_URL,
+      ssl: true,
     }
 });
 
