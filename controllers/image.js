@@ -1,13 +1,9 @@
 const fetchAPIData = ( req, res) => {
     
     const { input } = req.body;
-    // Your PAT (Personal Access Token) can be found in the portal under Authentification
     const PAT = process.env.CLARIFAI_PAT;
-    // Specify the correct user_id/app_id pairings
-    // Since you're making inferences outside your app's scope
-    const USER_ID = 'rusith-hansana';       
-    const APP_ID = 'face-detection-brain-app';
-    // Change these to whatever model and image URL you want to use
+    const USER_ID = process.env.UID;       
+    const APP_ID = process.env.APP_ID;
     const MODEL_ID = 'face-detection';
     const MODEL_VERSION_ID = '6dc7e46bc9124c5c8824be4822abe105';    
     const IMAGE_URL = input;
