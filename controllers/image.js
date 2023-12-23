@@ -2,7 +2,7 @@ const fetchAPIData = ( req, res) => {
     
     const { input } = req.body;
     // Your PAT (Personal Access Token) can be found in the portal under Authentification
-    const PAT = 'e55b330a0ba440acbe2af6c295dbcf6c';
+    const PAT = process.env.CLARIFAI_PAT;
     // Specify the correct user_id/app_id pairings
     // Since you're making inferences outside your app's scope
     const USER_ID = 'rusith-hansana';       
